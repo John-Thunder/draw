@@ -16,7 +16,7 @@
         <p><label>總人數：<input type="number" required min="1" max="999" v-model="total" number :disabled="isSetup" v-el:total></label><button :disabled="isSetup">確定</button></p>
     </form>
     <form @reset="reset" @submit.prevent="draw">
-        <p><label>本輪抽：<input type="number" v-model="round" number required :disabled="!this.isSetup || this.isRolling" required min="1" max="50" @input="checkRemaining" v-el:round></label><button :disabled="!isSetup" name="begin" v-text="isRolling ? '停止' : '开始'" v-el:begin></button></p>
+        <p><label>本輪抽：<input type="number" v-model="round" number required :disabled="!this.isSetup || this.isRolling" required min="1" max="50" @input="checkRemaining" v-el:round></label><button :disabled="!isSetup" name="begin" v-text="isRolling ? '停止' : '開始'" v-el:begin></button></p>
         <p>剩餘人數：<span v-text="remaining"></span> <button type="reset" :disabled="!isSetup">重製</button></p>
     </form>
 </div>
