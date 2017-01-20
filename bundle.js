@@ -116,7 +116,7 @@
 	          round.focus();
 	        });
 	      };
-	      reader.readAsText(file);
+	      reader.readAsText(file,'big5');
 	    },
 	    reset() {
 	      this.stopRoll();
