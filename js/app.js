@@ -106,9 +106,14 @@ let app = new Vue({
     },
     startRoll() {
       this.stopRoll();
+      var timesRun = 0;
       rollTimer = setInterval(() => {
         this.shuffle();
         this.winners = this.candidates.slice(0, this.round);
+        if(timesRun === 90){
+          clearTimeout(rollTimer);
+          this.isRolling = false;
+        }
       }, 1000 / 15);
       this.isRolling = true;
     },
