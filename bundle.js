@@ -166,7 +166,12 @@
                 timesRun += 1;
                 if(timesRun === 60){
                    clearInterval(rollTimer);
-                   this.isRolling = false;
+                   clearInterval(rollTimer);
+                   this.stopRoll();
+                   this.winners = this.candidates.splice(0, this.round);
+                   this.checkRemaining({
+                           target: this.$els.round
+                   });
                 }
 	      }, 1000 / 15);
 	      this.isRolling = true;
